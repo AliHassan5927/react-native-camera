@@ -12,9 +12,10 @@ const AppNavigation = () => {
     return (
         <Navigator
             screenOptions={{ headerShown: false }}
-            initialRouteName={SCREEN.clientHome}
+            initialRouteName={SCREEN.home}
         >
-            <Screen name={SCREEN.clientHome} component={App.Home} />
+            <Screen name={SCREEN.home} component={App.Home} />
+            <Screen name={SCREEN.previewImg} component={App.PreviewImg} />
 
         </Navigator>
     );

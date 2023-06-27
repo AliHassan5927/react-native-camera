@@ -45,56 +45,6 @@ export const ButtonColored = ({ text = '', onPress, disabled, background, textCo
     )
 }
 
-
-
-export const SelectableButtons = ({ buttons, onClick, animatedBtnStyle, btnStyle }) => {
-    const [btnContainerWidth, setWidth] = useState(0);
-    const btnWidth = btnContainerWidth / buttons.length;
-    const translateX = useRef(new Animated.Value(0)).current;
-    const translateXOpposit = translateX.interpolate({
-        inputRange: [0, 1],
-        outputRange: [1, 0],
-    });
-    const onPress = i => {
-        onClick(i + 1)
-        Animated.spring(translateX, {
-            toValue: i * btnWidth,
-            useNativeDriver: true,
-            bounciness: 0,
-        }).start();
-    };
-    return (
-        <View
-            style={[styles.btnContainer, btnStyle]}
-            onLayout={e => setWidth(e.nativeEvent.layout.width)}>
-            {buttons.map((btn, i) => (
-                <TouchableOpacity
-                    key={btn}
-                    style={styles.btn}
-                    onPress={() => onPress(i)}>
-                    <Text style={styles.btnTextInactive}>{btn}</Text>
-                </TouchableOpacity>
-            ))}
-            <Animated.View
-                style={[
-                    styles.animatedBtnContainer,
-                    { width: btnWidth, transform: [{ translateX }] }, animatedBtnStyle
-                ]}>
-                {buttons.map(btn => (
-                    <Animated.View
-                        key={btn}
-                        style={[
-                            styles.animatedBtn,
-                            { width: btnWidth, transform: [{ translateX: translateXOpposit }], animatedBtnStyle },
-                        ]}>
-                        <Text style={styles.btnTextActive}>{btn}</Text>
-                    </Animated.View>
-                ))}
-            </Animated.View>
-        </View>
-    );
-}
-
 const styles = StyleSheet.create({
     buttonBorder: {
         height: height(6.5),

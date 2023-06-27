@@ -7,26 +7,23 @@ import { appStyles } from '../../utilities'
 import { Icon } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 
-export const RoundBgIcon = ({ children, bgColor, onPress, style }) => {
+export const RoundBgIcon = ({ onPress, iconName, iconType }) => {
     return (
-        <TouchableOpacity onPress={onPress} activeOpacity={.5} >
-            <Wrapper style={[styles.roundWrapper, { backgroundColor: bgColor ?? colors.white20 }, style]}>
-                {children}
-            </Wrapper>
+        <TouchableOpacity activeOpacity={0.8} style={styles.bgWrapper}>
+            <Icon size={totalSize(2.5)} color={colors.appIcon1} name={iconName} type={iconType} onPress={onPress} />
         </TouchableOpacity>
     )
 }
 
 
-
-
 const styles = StyleSheet.create({
-    roundWrapper: {
+
+    bgWrapper: {
+        justifyContent: 'center',
+        alignItems: "center",
+        backgroundColor: colors.gray,
         height: height(5),
         width: height(5),
-        // backgroundColor: 'red',
-        borderRadius: height(3),
-        ...appStyles.center
-    },
-
+        borderRadius: height(2.5)
+    }
 })

@@ -34,6 +34,7 @@ export const colors = {
     // BACKGROUND
     appBgColor1: '#FFFFFF',
     appBgColor2: '#FAFAFA',
+    appBgColor3: '#000000',
 
 
 
@@ -44,9 +45,7 @@ export const colors = {
 
 
     // ICONS
-    appIcon1: '#0062FC',
-    appIcon2: '#F08400',
-    appIcon3: '#10A400',
+    appIcon1: '#FFFFFF',
 
 
 
