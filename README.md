@@ -1,3 +1,7 @@
+
+https://github.com/AliHassan5927/react-native-camera/assets/64846304/c857d02a-4b46-44ef-aa6d-129d39c3acf5
+
+
 # react-native-camera
 
 # key features
